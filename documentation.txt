@@ -1,0 +1,90 @@
+USER
+
+POST /api/users
+This endpoint allows the client to create a new user.
+Request Body
+name (string, required): The name of the user.
+email (string, required): The email address of the user.
+password (string, required): The password for the user's account.
+Response: The response of this request is a JSON schema representing the structure of the response object. The schema includes the properties and data types of the response object, which can be used for validation and documentation purposes.
+
+GET /api/users
+This endpoint retrieves a list of users.
+Request
+No request body is required for this endpoint.
+Response: The response will be a JSON array containing user objects with the following properties:
+id_users (number): The unique identifier for the user.
+name (string): The name of the user.
+email (string): The email address of the user.
+password (string): The password of the user.
+
+PUT /api/users/:id
+This endpoint makes an HTTP PUT request to update the user with ID 3. The request body should be in raw format and include the following parameters:
+name (string): The updated name of the user.
+email (string): The updated email address of the user.
+password (string): The updated password of the user.
+The response will include the updated user details.
+
+DELETE /api/users/:id 
+This endpoint allows to delete a specific user.
+Request Body
+This request does not require a request body.
+Response: The response will not include a response body. The status code will indicate the success or failure of the deletion operation.
+
+
+SECTION
+
+GET /api/section/:id 
+This endpoint makes an HTTP GET request to retrieve the details of id's section.
+Request Body
+This request does not require a request body.
+Response: Body
+id: (number) The unique identifier for the section.
+name: (string) The name of the section.
+description: (string) The description of the section.
+
+POST
+This endpoint allows you to add a new section.
+Request Body
+id_users (number, required): The ID of the user for whom the section is being added.
+title (string, required): The title of the new section.
+Response: The response will contain the details of the newly added section.
+
+DELETE /api/section/:id
+The API endpoint sends an HTTP DELETE request to the url
+Response: The response of this request is expected to be a JSON schema. The schema will define the structure of the response data in a JSON format, including the properties and their data types.
+
+UPDATE /api/section/:id
+This endpoint is used to update a specific section with the given ID. The request should be sent the url using the HTTP PUT method. The request body should contain a JSON object with the "title" field to update the title of the section.
+Response
+The response of this request is a JSON schema representing the updated section object. The schema will include the properties and data types of the fields in the section object.
+
+
+TASK
+
+POST /api/task endpoint is used to create a new task. The request should include a JSON payload with the title, body, and id_section fields.
+Request:
+title (string, required): The title of the task.
+body (string, required): The body/content of the task.
+id_section (number, required): The ID of the section to which the task belongs.
+Response: The response of this request is a JSON schema representing the structure of the response object. It should include the properties and their data types that the API will return upon successful creation of a task.
+
+
+GET /api/task
+This endpoint is used to retrieve a task from the API.
+Response: The response will include the details of the task, such as its ID, title, description, and status.
+
+UPDATE /api/task/14
+This endpoint is used to update a specific task identified by its ID.
+Body:
+title (string, optional): The title of the task.
+body (string, optional): The content/body of the task.
+id_section (number, optional): The ID of the section to which the task belongs.
+
+
+DELETE /api/task/14
+This endpoint sends an HTTP DELETE request to the url to delete a specific task.
+Request Body: This request does not require a request body.
+Response: The response will not include a response body. The status code will indicate the success or failure of the deletion operation.
+
+

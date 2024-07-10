@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "cbc2f3df-8740-4912-a202-d289f9cb02e4",
+		"name": "Testing",
+		"description": "# About this collection\n\nThis collection is designed to help you test the performance of your API endpoints with varying sizes of query parameters. The collection contains pre-built requests that simulate large and small query parameters to assess how well your API handles different loads.\n\nUsing this collection, you can identify potential bottlenecks or performance issues in your API, enabling you to optimize and enhance the overall performance.\n\n## **Using the collection**\n\n**Step 1:** Replace the placeholders in the URLs and parameters with your own API base URLs and relevant query parameters.\n\n**Step 2 (optional):** Modify the sizes of the query parameters to reflect your specific use case better. You can create multiple requests with varying parameter sizes to test your API's performance thoroughly.\n\n**Step 3:** Run the collection using Postman's Collection Runner or Postman's Newman CLI tool.\n\n**Step 4:** Analyze the results to identify performance bottlenecks, slow response times, or potential issues with handling large or small query parameters.\n\n## Resources\n\n[Performance Testing](https://learning.postman.com/docs/designing-and-developing-your-api/testing-your-api/introduction-to-performance-testing/)  \n[Postman Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)  \n[Postman Newman CLI](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)\n\n[<br>](https://postman.postman.co/documentation/22517504-3302192d-87dd-4612-b381-61894de21203?entity=&branch=&version=)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36759103",
+		"_collection_link": "https://bootcamp-6677.postman.co/workspace/API---Kanban~4840a010-da65-412e-8f52-2691175c356b/collection/36759103-cbc2f3df-8740-4912-a202-d289f9cb02e4?action=share&source=collection_link&creator=36759103"
+	},
+	"item": [
+		{
+			"name": "Testing Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"taniaaaa\",\r\n    \"email\": \"zamotania003@gmail.com\",\r\n    \"password\": \"12453\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "### Create User\n\nThis endpoint allows the client to create a new user.\n\n#### Request Body\n\n- `name` (string, required): The name of the user.\n    \n- `email` (string, required): The email address of the user.\n    \n- `password` (string, required): The password for the user's account.\n    \n\n#### Response\n\nThe response of this request is a JSON schema representing the structure of the response object. The schema includes the properties and data types of the response object, which can be used for validation and documentation purposes."
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3005/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "### GET /api/users\n\nThis endpoint retrieves a list of users.\n\n#### Request\n\nNo request body is required for this endpoint.\n\n#### Response\n\nThe response will be a JSON array containing user objects with the following properties:\n\n- `id_users` (number): The unique identifier for the user.\n    \n- `name` (string): The name of the user.\n    \n- `email` (string): The email address of the user.\n    \n- `password` (string): The password of the user.\n    \n\nExample response:\n\n``` json\n[\n    {\n        \"id_users\": 0,\n        \"name\": \"\",\n        \"email\": \"\",\n        \"password\": \"\"\n    }\n]\n\n ```\n\n#### JSON Schema\n\n``` json\n{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"id_users\": {\n                \"type\": \"number\"\n            },\n            \"name\": {\n                \"type\": \"string\"\n            },\n            \"email\": {\n                \"type\": \"string\"\n            },\n            \"password\": {\n                \"type\": \"string\"\n            }\n        }\n    }\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zamotania003@gmail.com\",\r\n    \"password\": \"12456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"holaotra\",\r\n    \"email\": \"zamoraaa003@gamil.com\",\r\n    \"password\": \"hola\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/users/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						},
+						"description": "This endpoint makes an HTTP PUT request to update the user with ID 3. The request body should be in raw format and include the following parameters:\n\n- name (string): The updated name of the user.\n    \n- email (string): The updated email address of the user.\n    \n- password (string): The updated password of the user.\n    \n\nThe response will include the updated user details."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3005/api/users/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						},
+						"description": "### Delete User\n\nThis endpoint sends an HTTP DELETE request to localhost:3005/api/users/3 to delete a specific user.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\nThe response will not include a response body. The status code will indicate the success or failure of the deletion operation."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testing Sections",
+			"item": [
+				{
+					"name": "Get Section",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3005/api/section/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"section",
+								"2"
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to localhost:3005/api/section/2 to retrieve the details of section 2.\n\n### Request Body\n\nThis request does not require a request body.\n\n### Response Body\n\n- `id`: (number) The unique identifier for the section.\n    \n- `name`: (string) The name of the section.\n    \n- `description`: (string) The description of the section."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Section",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_users\": 3,\r\n    \"title\": \"Bootcamp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/section/",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"section",
+								""
+							]
+						},
+						"description": "\nThe `POST /api/section/` endpoint is used to create a new section. The request should include the `id_users` and `title` parameters in the request body.\n\n### Request Body\n- `id_users` (number, required): The ID of the user to whom the section belongs.\n- `title` (string, required): The title of the section.\n\n### Response (JSON Schema)\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": {\n      \"type\": \"number\"\n    },\n    \"id_users\": {\n      \"type\": \"number\"\n    },\n    \"title\": {\n      \"type\": \"string\"\n    }\n  }\n}\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Section",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/section/7",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"section",
+								"7"
+							]
+						},
+						"description": "The API endpoint sends an HTTP DELETE request to localhost:3005/api/section/7.\n\n### Response\n\nThe response of this request is expected to be a JSON schema. The schema will define the structure of the response data in a JSON format, including the properties and their data types."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Section",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"hola mundo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/section/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"section",
+								"9"
+							]
+						},
+						"description": "This endpoint is used to update a specific section with the given ID. The request should be sent to localhost:3005/api/section/9 using the HTTP PUT method. The request body should contain a JSON object with the \"title\" field to update the title of the section.\n\n### Response\n\nThe response of this request is a JSON schema representing the updated section object. The schema will include the properties and data types of the fields in the section object."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testing Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Asistir Coding bootcamp\",\r\n    \"body\": \"Ver los videoss\",\r\n    \"id_section\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/task",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"task"
+							]
+						},
+						"description": "The `POST /api/task` endpoint is used to create a new task. The request should include a JSON payload with the `title`, `body`, and `id_section` fields.\n\n### Request Body\n\n- `title` (string, required): The title of the task.\n    \n- `body` (string, required): The body/content of the task.\n    \n- `id_section` (number, required): The ID of the section to which the task belongs.\n    \n\n### Response\n\nThe response of this request is a JSON schema representing the structure of the response object. It should include the properties and their data types that the API will return upon successful creation of a task.\n\nFor example:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": {\n      \"type\": \"number\"\n    },\n    \"title\": {\n      \"type\": \"string\"\n    },\n    \"body\": {\n      \"type\": \"string\"\n    },\n    \"id_section\": {\n      \"type\": \"number\"\n    },\n    \"createdAt\": {\n      \"type\": \"string\",\n      \"format\": \"date-time\"\n    },\n    \"updatedAt\": {\n      \"type\": \"string\",\n      \"format\": \"date-time\"\n    }\n  }\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get task",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/task",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"task"
+							]
+						},
+						"description": "### Get Task\n\nThis endpoint is used to retrieve a task from the API.\n\n#### Request\n\n- Method: GET\n    \n- Endpoint: `localhost:3005/api/task`\n    \n\n#### Response\n\nThe response will include the details of the task, such as its ID, title, description, and status.\n\nExample Response:\n\n``` json\n{\n    \"id\": \"task_id\",\n    \"title\": \"Task Title\",\n    \"description\": \"Task Description\",\n    \"status\": \"pending\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Estoy cansada\",\r\n    \"body\": \"Quiero dormir\",\r\n    \"id_section\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/api/task/14",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"task",
+								"14"
+							]
+						},
+						"description": "## Update Task\n\nThis endpoint is used to update a specific task identified by its ID.\n\n### Request\n\n- Method: PUT\n    \n- URL: `localhost:3005/api/task/14`\n    \n- Body:\n    - title (string, optional): The title of the task.\n        \n    - body (string, optional): The content/body of the task.\n        \n    - id_section (number, optional): The ID of the section to which the task belongs.\n        \n\n### Response\n\nThe response for this request is a JSON object conforming to the following schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3005/api/task/14",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"task",
+								"14"
+							]
+						},
+						"description": "### Delete Task\n\nThis endpoint sends an HTTP DELETE request to localhost:3005/api/task/14 to delete a specific task.\n\n**Request Body**  \nThis request does not require a request body.\n\n**Response**  \nThe response will not include a response body. The status code will indicate the success or failure of the deletion operation."
+					},
+					"response": []
+				}
+			],
+			"description": "Métodos relacionados a el testeo de la api en la rama task"
+		}
+	]
+}
